@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Avatar from "@/components/Avatar.vue";
 import FollowSidebar from "@/components/FollowSidebar.vue";
+import PostContent from "@/components/PostContent.vue";
 import DefaultLayout from "@/layouts/DefaultLayout.vue";
 </script>
 
@@ -37,23 +38,7 @@ import DefaultLayout from "@/layouts/DefaultLayout.vue";
         </div>
 
         <section class="px-16 py-8">
-          <div>
-            <p>
-              It’s from around 2021, so some questions got answered, some
-              predictions got proven wrong or boring-in-retrospect, and React’s
-              official SSR story actually released. I once planned a rewrite,
-              but I’m burnt out and can’t be arsed. (Feel free to tell me what I
-              got wrong in the comments.)
-            </p>
-
-            <p>
-              It’s from around 2021, so some questions got answered, some
-              predictions got proven wrong or boring-in-retrospect, and React’s
-              official SSR story actually released. I once planned a rewrite,
-              but I’m burnt out and can’t be arsed. (Feel free to tell me what I
-              got wrong in the comments.)
-            </p>
-          </div>
+          <PostContent />
         </section>
 
         <section class="px-16 py-8 border border-b-0 border-l-0 border-r-0">

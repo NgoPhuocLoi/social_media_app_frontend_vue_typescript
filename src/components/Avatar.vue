@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<AvatarProps>(), {
 <template>
   <div
     class="rounded-full overflow-hidden flex items-center justify-center"
-    :class="`w-[${size}] h-[${size}] `"
+    :style="`width: ${size};height: ${size}`"
   >
     <img
       class="w-full rounded-full border border-gray-500 object-center"

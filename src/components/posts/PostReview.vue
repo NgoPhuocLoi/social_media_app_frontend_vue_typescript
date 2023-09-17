@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import LikeIcon from "../icons/LikeIcon.vue";
-import CommentIcon from "../icons/CommentIcon.vue";
-import { FcLikePlaceholder } from "oh-vue-icons/icons";
 import Avatar from "../Avatar.vue";
 </script>
 <template>
@@ -20,11 +17,11 @@ import Avatar from "../Avatar.vue";
     </div>
 
     <div class="pl-[40px]">
-      <h2 class="text-2xl font-bold mb-1 hover:text-blue-500">
+      <h2 class="text-2xl font-bold mb-3 hover:text-blue-500">
         Throw away the "Script" from "Type""Script".
       </h2>
 
-      <div class="flex text-sm text-gray-600">
+      <div class="flex text-sm text-gray-600 ml-[-8px]">
         <div
           class="py-1 pl-2 pr-3 flex rounded-md hover:bg-gray-100 items-center duration-100 cursor-pointer"
         >

@@ -3,7 +3,7 @@ import Avatar from "@/components/Avatar.vue";
 </script>
 
 <template>
-  <header class="h-[56px] shadow-md fixed top-0 left-0 right-0 bg-white">
+  <header class="h-[56px] shadow-md fixed top-0 left-0 right-0 bg-white z-20">
     <div class="px-4 flex justify-between items-center h-full">
       <div class="flex h-full py-2 items-center">
         <a href="#" class="block w-[50px] h-[40px]">
@@ -30,11 +30,12 @@ import Avatar from "@/components/Avatar.vue";
       </div>
 
       <div class="flex items-center">
-        <div
+        <RouterLink
+          to="/new"
           class="border px-[14px] py-[6px] mr-2 rounded-md border-blue-500 text-[16px] text-blue-500"
         >
           Create Post
-        </div>
+        </RouterLink>
         <div class="m-[4px] p-2">
           <ion-icon
             name="notifications-outline"
