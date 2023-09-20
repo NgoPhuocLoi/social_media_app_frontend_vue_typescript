@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import Avatar from "@/components/Avatar.vue";
+interface HeaderProps {
+  hasSearchBar: boolean;
+}
+
+const props = withDefaults(defineProps<HeaderProps>(), {
+  hasSearchBar: true,
+});
 </script>
 
 <template>
@@ -14,7 +21,7 @@ import Avatar from "@/components/Avatar.vue";
           />
         </a>
 
-        <div class="mx-4 w-[420px] relative">
+        <div v-if="hasSearchBar" class="mx-4 w-[420px] relative">
           <input
             class="h-full w-[420px] px-2 py-[6.5px] rounded-md border-2 border-gray-400"
             type="text"
