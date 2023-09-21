@@ -1,5 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { HomeView, PostView, CreatePostView, AuthView } from "../views";
+import {
+  HomeView,
+  PostView,
+  CreatePostView,
+  AuthView,
+  NotFoundView,
+  ProfileView,
+} from "../views";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,6 +38,12 @@ const router = createRouter({
       name: "post",
       component: PostView,
     },
+    {
+      path: "/:username",
+      name: "profile",
+      component: ProfileView,
+    },
+    { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFoundView },
   ],
 });
 

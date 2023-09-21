@@ -50,10 +50,47 @@ const props = withDefaults(defineProps<HeaderProps>(), {
           ></ion-icon>
         </div>
 
-        <Avatar
-          class="p-1"
-          url="https://res.cloudinary.com/practicaldev/image/fetch/s--FYCEQ8su--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/849300/27f29501-1aad-41a0-b64e-f38bf422526c.jpeg"
-        />
+        <Popper>
+          <Avatar
+            class="p-1"
+            url="https://res.cloudinary.com/practicaldev/image/fetch/s--FYCEQ8su--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/849300/27f29501-1aad-41a0-b64e-f38bf422526c.jpeg"
+          />
+          <template #content>
+            <div
+              class="p-2 bg-white mr-4 mt-[-12px] shadow border border-gray-300 bor rounded-md w-[250px]"
+            >
+              <ul class="text-gray-600">
+                <li class="h-fit cursor-pointer rounded-md overflow-hidden">
+                  <RouterLink
+                    to="/profile"
+                    class="py-2 px-4 block hover:bg-blue-100 duration-100 rounded-md"
+                  >
+                    <div>
+                      <p>Ngo Phuoc Loi</p>
+                      <p class="text-sm">@ngophuocloi</p>
+                    </div>
+                  </RouterLink>
+                </li>
+                <div class="w-full h-[1px] bg-gray-200 my-2"></div>
+                <li>
+                  <RouterLink
+                    to="#"
+                    class="block py-2 px-4 hover:bg-blue-100 duration-100 rounded-md"
+                    >Dashboard</RouterLink
+                  >
+                </li>
+                <div class="w-full h-[1px] bg-gray-200 my-2"></div>
+                <li>
+                  <RouterLink
+                    to="#"
+                    class="block py-2 px-4 hover:bg-blue-100 duration-100 rounded-md"
+                    >Logout</RouterLink
+                  >
+                </li>
+              </ul>
+            </div>
+          </template>
+        </Popper>
       </div>
     </div>
   </header>

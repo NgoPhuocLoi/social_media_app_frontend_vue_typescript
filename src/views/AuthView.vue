@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
-import { LoginForm, RegisterForm } from "@/components/auth/index.ts";
+import { LoginForm, RegisterForm } from "../components/auth";
 import { computed } from "vue";
 
 const route = useRoute();
