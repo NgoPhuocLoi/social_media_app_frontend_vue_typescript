@@ -12,7 +12,7 @@ const data = ref("Hello");
       <div
         data-ph="Helolo"
         contenteditable="true"
-        class="font-semibold text-gray-600 text-xl w-full mb-4 p-2 min-h-[30px] rounded-md outline-none leading-0 bg-white max-w-[70%] break-words"
+        class="font-semibold text-gray-600 text-xl w-full mb-4 p-2 min-h-[30px] rounded-md outline-gray-100 leading-0 bg-white flex-1 break-words mr-4"
       ></div>
       <div class="flex gap-2 flex-shrink-0">
         <button class="px-4 py-2 text-white bg-blue-500 rounded-lg h-fit">
