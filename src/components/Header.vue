@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import Avatar from "@/components/Avatar.vue";
+import { useUserStore } from "@/stores";
+import { useRouter } from "vue-router";
 interface HeaderProps {
   hasSearchBar: boolean;
 }
@@ -7,6 +9,15 @@ interface HeaderProps {
 const props = withDefaults(defineProps<HeaderProps>(), {
   hasSearchBar: true,
 });
+
+const userStore = useUserStore();
+const router = useRouter();
+
+const handleLogout = () => {
+  userStore.setUser(null);
+  localStorage.removeItem("accesstoken");
+  router.push("/auth/login");
+};
 </script>
 
 <template>
@@ -81,11 +92,12 @@ const props = withDefaults(defineProps<HeaderProps>(), {
                 </li>
                 <div class="w-full h-[1px] bg-gray-200 my-2"></div>
                 <li>
-                  <RouterLink
-                    to="#"
-                    class="block py-2 px-4 hover:bg-blue-100 duration-100 rounded-md"
-                    >Logout</RouterLink
+                  <button
+                    @click="handleLogout"
+                    class="block w-full text-left py-2 px-4 hover:bg-blue-100 duration-100 rounded-md"
                   >
+                    Logout
+                  </button>
                 </li>
               </ul>
             </div>

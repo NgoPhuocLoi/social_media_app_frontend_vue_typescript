@@ -8,17 +8,22 @@ import {
   ProfileView,
 } from "../views";
 
+import store, { useUserStore } from "../stores";
+import { UserService } from "@/services";
+
+const userStore = useUserStore(store);
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/auth",
-      name: "auth",
       redirect: "/auth/login",
       children: [
         {
           path: ":action",
           component: AuthView,
+          name: "auth",
         },
       ],
     },
@@ -45,6 +50,22 @@ const router = createRouter({
     },
     { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFoundView },
   ],
+});
+
+router.beforeEach(async (to, from) => {
+  if (to.name === "auth") {
+    return localStorage["accesstoken"] ? "/" : true;
+  }
+  try {
+    const res = await UserService.getCurrentUser();
+    const { user } = res.data.metadata;
+    userStore.setUser(user);
+
+    if (!user) return "/auth/login";
+  } catch (error) {
+    console.log(error);
+    return "/auth/login";
+  }
 });
 
 export default router;

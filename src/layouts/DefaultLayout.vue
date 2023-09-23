@@ -17,3 +17,10 @@ const props = withDefaults(defineProps<DefaultLayoutProps>(), {
     </div>
   </main>
 </template>
+
+<style>
+.error-msg {
+  color: red;
+  font-size: 12px;
+}
+</style>
