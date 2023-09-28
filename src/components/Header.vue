@@ -63,8 +63,8 @@ const handleLogout = () => {
 
         <Popper>
           <Avatar
-            class="p-1"
-            url="https://res.cloudinary.com/practicaldev/image/fetch/s--FYCEQ8su--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/849300/27f29501-1aad-41a0-b64e-f38bf422526c.jpeg"
+            class="p-1 cursor-pointer"
+            :url="(userStore.user?.avatarUrl as string)"
           />
           <template #content>
             <div
@@ -73,19 +73,22 @@ const handleLogout = () => {
               <ul class="text-gray-600">
                 <li class="h-fit cursor-pointer rounded-md overflow-hidden">
                   <RouterLink
-                    to="/profile"
+                    :to="`/profile/${userStore.user?._id}`"
                     class="py-2 px-4 block hover:bg-blue-100 duration-100 rounded-md"
                   >
-                    <div>
+                    <div class="flex items-center">
+                      <Avatar
+                        class="p-1 cursor-pointer mr-1"
+                        :url="(userStore.user?.avatarUrl as string)"
+                      />
                       <p>Ngo Phuoc Loi</p>
-                      <p class="text-sm">@ngophuocloi</p>
                     </div>
                   </RouterLink>
                 </li>
                 <div class="w-full h-[1px] bg-gray-200 my-2"></div>
                 <li>
                   <RouterLink
-                    to="#"
+                    to="/dashboard"
                     class="block py-2 px-4 hover:bg-blue-100 duration-100 rounded-md"
                     >Dashboard</RouterLink
                   >
