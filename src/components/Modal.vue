@@ -18,11 +18,11 @@ withDefaults(defineProps<ModalProps>(), {
   >
     <div class="bg-white max-w-[640px] rounded-lg">
       <div
-        class="p-2 pl-4 border border-t-0 border-l-0 border-r-0 flex justify-between"
+        class="p-2 pl-4 border border-t-0 border-l-0 border-r-0 flex justify-between items-center"
       >
-        <p class="text-xl font-semibold">{{ title }}</p>
+        <p class="text-xl font-semibold leading-none">{{ title }}</p>
         <div
-          class="text-3xl p-2 hover:bg-gray-100 w-[40px] h-[40px] rounded-md cursor-pointer flex items-center justify-center"
+          class="text-3xl p-2 ml-6 hover:bg-gray-100 w-[40px] h-[40px] rounded-md cursor-pointer flex items-center justify-center"
           @click="emit('update:open', false)"
         >
           &times;

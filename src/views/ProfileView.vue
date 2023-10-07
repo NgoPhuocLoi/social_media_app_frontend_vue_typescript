@@ -6,16 +6,19 @@ import { useUserStore } from "@/stores";
 import { onMounted, ref } from "vue";
 import { PostService } from "../services";
 import type { Post } from "@/interfaces/model";
+import { useRoute } from "vue-router";
 
 const posts = ref<Post[]>([]);
 const loading = ref(false);
-
+const route = useRoute();
 const userStore = useUserStore();
 
 onMounted(async () => {
   loading.value = true;
   try {
-    const res = await PostService.getPublishedPostsOfUser(userStore.user!._id);
+    const res = await PostService.getPublishedPostsOfUser(
+      (route.params.userId as string) || ""
+    );
     posts.value = res.data.metadata.posts;
   } catch (error) {
     console.log(error);

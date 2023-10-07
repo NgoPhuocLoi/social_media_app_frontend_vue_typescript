@@ -11,8 +11,8 @@ const props = withDefaults(defineProps<DefaultLayoutProps>(), {
 
 <template>
   <Header :has-search-bar="hasSearchBar" />
-  <main class="pt-[56px]">
-    <div class="p-4 bg-gray-100">
+  <main class="pt-[56px] min-h-screen">
+    <div class="p-4 bg-gray-100 min-h-screen">
       <slot></slot>
     </div>
   </main>
